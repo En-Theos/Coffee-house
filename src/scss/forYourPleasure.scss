@@ -1,0 +1,197 @@
+@import './technical/none';
+@import './technical/fonts';
+
+body {
+    header {
+        background-image: url('../image/png/fon_header3.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        .limit {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 30px 15px 85px;
+            color: white;
+            font-family: $Merienda;
+            nav {
+                margin-bottom: 60px;
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 355px;
+                    li {
+                        display: flex;
+                        align-items: flex-end;
+                        a {
+                            color: white;
+                        }
+                        img {
+                            margin-right: -9px;
+                        }
+                    }
+                }
+            }
+            .content {
+                h2 {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 58px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    main {
+        .aboutUs {
+            .limit {
+                display: flex;
+                max-width: 730px;
+                margin: 0 auto;
+                padding: 70px 15px 57px;
+                font-family: $Merienda;
+                position: relative;
+                .image {
+                    margin-right: 80px;
+                    img {
+                        width: 272px;
+                    }
+                }
+                .content {
+                    h3 {
+                        font-size: 24px;
+                        font-weight: 400;
+                        text-align: center;
+                        margin-bottom: 20px;                        
+                    }
+                    .decor {
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        margin-bottom: 25px;
+                        &::after {
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            right: 65px;
+                            content: '';
+                            width: 60px;
+                            height: 1px;
+                            background-color: black;
+                        }
+                        &::before {
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 65px;
+                            content: '';
+                            width: 60px;
+                            height: 1px;
+                            background-color: black;
+                        }
+                    }
+                    p {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        text-align: center;
+                    }
+                }
+                .line {
+                    position: absolute;
+                    width: 240px;
+                    height: 1px;
+                    background-color: black;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .goods {
+            .limit {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 60px 15px 32px;
+                font-family: $Merienda;
+                .goodsCard {
+                    display: grid;
+                    grid-template-columns: repeat(3, 220px);
+                    justify-content: space-between;
+                    row-gap: 60px;
+                    .card {
+                        width: 220px;
+                        height: 260px;
+                        border-radius: 8px;
+                        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+                        text-align: center;
+                        padding: 37px 23px 0;
+                        img {
+                            margin-bottom: 14px;
+                        }
+                        .name {
+                            margin-bottom: 14px;
+                        }
+                        .country {
+                            margin-bottom: 14px;
+                            text-align: right;
+                        } 
+                        .price {
+                            text-align: right;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .limit {
+            max-width: 370px;
+            margin: 0 auto;
+            padding: 30px 15px 20px;
+            font-family: $Merienda;
+            nav {
+                margin-bottom: 30px;
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 355px;
+                    li {
+                        display: flex;
+                        align-items: flex-end;
+                        a {
+                            color: black;
+                        }
+                        img {
+                            margin-right: -2px;
+                        }
+                    }
+                }
+            }
+            .decor {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                &::after {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 75px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+                &::before {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 75px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+            }
+        }
+    }
+}

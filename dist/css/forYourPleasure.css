@@ -72,20 +72,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 body header {
-  background-image: url("../image/png/fon_header.png");
+  background-image: url("../image/png/fon_header3.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 body header .limit {
-  margin: 0 auto;
-  padding: 30px 15px 0;
   max-width: 1160px;
-  height: 640px;
+  margin: 0 auto;
+  padding: 30px 15px 85px;
   color: white;
   font-family: "Merienda", cursive;
 }
 body header .limit nav {
-  margin-bottom: 111px;
+  margin-bottom: 60px;
 }
 body header .limit nav ul {
   display: flex;
@@ -102,148 +101,106 @@ body header .limit nav ul li a {
 body header .limit nav ul li img {
   margin-right: -9px;
 }
-body header .limit .contentHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 690px;
-  padding: 0 10px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2509803922);
-}
-body header .limit .contentHeader h1 {
-  font-weight: 700;
+body header .limit .content h2 {
   font-size: 40px;
-  margin: 0 0 20px 0;
-}
-body header .limit .contentHeader .decor {
-  margin: 0 0 35px 0;
-  position: relative;
-}
-body header .limit .contentHeader .decor::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 55px;
-  content: "";
-  width: 60px;
-  height: 1px;
-  background-color: white;
-}
-body header .limit .contentHeader .decor::before {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 55px;
-  content: "";
-  width: 60px;
-  height: 1px;
-  background-color: white;
-}
-body header .limit .contentHeader .slogan {
   font-weight: 700;
-  font-size: 24px;
-  margin: 0 0 20px 0;
-}
-body header .limit .contentHeader .question {
-  font-weight: 700;
-  font-size: 24px;
-  margin: 0 0 18px 0;
-}
-body header .limit .contentHeader button {
-  color: white;
-  height: 30px;
-  width: 120px;
-  border: 1px solid white;
-  border-radius: 3px;
-  background: none;
+  line-height: 58px;
+  text-align: center;
 }
 body main .aboutUs .limit {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 605px;
+  max-width: 730px;
   margin: 0 auto;
-  padding: 80px 15px 100px;
+  padding: 70px 15px 57px;
   font-family: "Merienda", cursive;
+  position: relative;
 }
-body main .aboutUs .limit h3 {
-  margin-bottom: 20px;
+body main .aboutUs .limit .image {
+  margin-right: 80px;
+}
+body main .aboutUs .limit .image img {
+  width: 272px;
+}
+body main .aboutUs .limit .content h3 {
   font-size: 24px;
   font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
 }
-body main .aboutUs .limit .decor {
+body main .aboutUs .limit .content .decor {
+  display: flex;
+  justify-content: center;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
-body main .aboutUs .limit .decor::after {
+body main .aboutUs .limit .content .decor::after {
   display: block;
   position: absolute;
   top: 50%;
-  right: 55px;
+  right: 65px;
   content: "";
   width: 60px;
   height: 1px;
   background-color: black;
 }
-body main .aboutUs .limit .decor::before {
+body main .aboutUs .limit .content .decor::before {
   display: block;
   position: absolute;
   top: 50%;
-  left: 55px;
+  left: 65px;
   content: "";
   width: 60px;
   height: 1px;
   background-color: black;
 }
-body main .aboutUs .limit p {
+body main .aboutUs .limit .content p {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
 }
-body main .goods {
-  background-image: url("../image/png/fon_goods.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+body main .aboutUs .limit .line {
+  position: absolute;
+  width: 240px;
+  height: 1px;
+  background-color: black;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 body main .goods .limit {
-  max-width: 815px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 80px 15px 110px;
+  padding: 60px 15px 32px;
   font-family: "Merienda", cursive;
 }
-body main .goods .limit h3 {
-  font-size: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 40px;
-}
-body main .goods .limit .cardsGoods {
-  display: flex;
+body main .goods .limit .goodsCard {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
   justify-content: space-between;
+  row-gap: 60px;
 }
-body main .goods .limit .cardsGoods .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+body main .goods .limit .goodsCard .card {
   width: 220px;
-  height: 240px;
+  height: 260px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.6509803922);
-  padding: 22px 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 37px 23px 0;
 }
-body main .goods .limit .cardsGoods .card img {
-  width: 150px;
+body main .goods .limit .goodsCard .card img {
+  margin-bottom: 14px;
 }
-body main .goods .limit .cardsGoods .card .name {
-  font-size: 14px;
+body main .goods .limit .goodsCard .card .name {
+  margin-bottom: 14px;
 }
-body main .goods .limit .cardsGoods .card .price {
-  font-size: 14px;
+body main .goods .limit .goodsCard .card .country {
+  margin-bottom: 14px;
+  text-align: right;
+}
+body main .goods .limit .goodsCard .card .price {
+  text-align: right;
   font-weight: 700;
-  align-self: flex-end;
 }
 body footer .limit {
   max-width: 370px;
