@@ -1,0 +1,53 @@
+@import '../../style/fonts';
+
+footer {
+    .limit {
+        max-width: 370px;
+        margin: 0 auto;
+        padding: 30px 15px 20px;
+        font-family: $Merienda;
+        nav {
+            margin-bottom: 30px;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                max-width: 355px;
+                li {
+                    display: flex;
+                    align-items: flex-end;
+                    a {
+                        color: black;
+                    }
+                    img {
+                        margin-right: -2px;
+                    }
+                }
+            }
+        }
+        .decor {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            &::after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 75px;
+                content: '';
+                width: 60px;
+                height: 1px;
+                background-color: black;
+            }
+            &::before {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 75px;
+                content: '';
+                width: 60px;
+                height: 1px;
+                background-color: black;
+            }
+        }
+    }
+}

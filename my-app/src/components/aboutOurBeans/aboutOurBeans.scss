@@ -1,0 +1,67 @@
+@import '../../style/fonts';
+
+.aboutOurBeans {
+    .limit {
+        display: flex;
+        max-width: 730px;
+        margin: 0 auto;
+        padding: 70px 15px 57px;
+        font-family: $Merienda;
+        position: relative;
+        .image {
+            margin-right: 80px;
+            img {
+                width: 272px;
+            }
+        }
+        .content {
+            h3 {
+                font-size: 24px;
+                font-weight: 400;
+                text-align: center;
+                margin-bottom: 20px;                        
+            }
+            .decor {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                margin-bottom: 25px;
+                &::after {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 65px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+                &::before {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 65px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+            }
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+        .line {
+            position: absolute;
+            width: 240px;
+            height: 1px;
+            background-color: black;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

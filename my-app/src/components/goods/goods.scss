@@ -1,0 +1,73 @@
+@import '../../style/fonts';
+
+section {
+    .limit {
+        display: flex;
+        max-width: 865px;
+        margin: 0 auto;
+        padding: 70px 15px 30px;
+        font-family: $Merienda;
+        .image {
+            margin-right: 55px;
+            img {
+                width: 390px;
+            }
+        }
+        .content {
+            h3 {
+                font-size: 24px;
+                font-weight: 400;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .decor {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                margin-bottom: 25px;
+                &::after {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 95px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+                &::before {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 95px;
+                    content: '';
+                    width: 60px;
+                    height: 1px;
+                    background-color: black;
+                }
+            }
+            .country {
+                margin-bottom: 16px;
+                span {
+                    font-weight: 700;
+                }
+            }
+            .description {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                margin-bottom: 16px;
+                span {
+                    font-weight: 700;
+                }
+            }
+            .price {
+                font-family: $Merienda;
+                font-weight: 700;
+                span {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

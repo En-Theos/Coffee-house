@@ -1,0 +1,40 @@
+@import '../../style/fonts';
+
+header {
+    background-image: url('../../resources/image/png/fon_header2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .limit {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 30px 15px 85px;
+        color: white;
+        font-family: $Merienda;
+        nav {
+            margin-bottom: 60px;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                max-width: 355px;
+                li {
+                    display: flex;
+                    align-items: flex-end;
+                    a {
+                        color: white;
+                    }
+                    img {
+                        margin-right: -9px;
+                    }
+                }
+            }
+        }
+        .content {
+            h2 {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 58px;
+                text-align: center;
+            }
+        }
+    }
+}
