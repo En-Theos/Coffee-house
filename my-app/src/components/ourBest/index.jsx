@@ -6,7 +6,7 @@ import goods3 from '../../resources/image/png/goods3.png';
 
 export default function OurBest() {
     return (
-        <section className="goods">
+        <section className="ourBest">
             <div className="limit">
                 <h3>Our best</h3>
                 <div className="cardsGoods">

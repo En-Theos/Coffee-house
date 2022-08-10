@@ -1,7 +1,6 @@
 @import '../../style/fonts';
 
-header {
-    background-image: url('../../resources/image/png/fon_header2.png');
+.minorHeader {
     background-repeat: no-repeat;
     background-size: cover;
     .limit {
@@ -19,7 +18,7 @@ header {
                 li {
                     display: flex;
                     align-items: flex-end;
-                    a {
+                    .link {
                         color: white;
                     }
                     img {

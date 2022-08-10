@@ -1,8 +1,13 @@
 import './aboutOurBeans.scss';
-import foto from '../../resources/image/png/foto.png';
+import foto1 from '../../resources/image/png/foto.png';
+import foto2 from '../../resources/image/png/foto2.png';
 import nutsBlack from '../../resources/image/svg/nuts_black.svg';
 
-export default function AboutOurBeans() {
+export default function AboutOurBeans(props) {
+    const { fotoMod } = props;
+
+    const foto = fotoMod ? foto1 : foto2;
+
     return (
         <section className="aboutOurBeans">
             <div className="limit">

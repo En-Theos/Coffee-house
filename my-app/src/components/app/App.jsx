@@ -1,13 +1,20 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Footer from "../footer";
-import MinorHeader from "../minorHeader";
+import { MainPage, OurCoffeePage, ForYourPleasurePage, GoodsPage} from "../pages";
 
 export default function App() {
   return (
-    <div className="App">
-      <MinorHeader/>
-      <main>
-      </main>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/OurCoffeePage" element={<OurCoffeePage/>}/>
+          <Route path="/ForYourPleasurePage" element={<ForYourPleasurePage/>}/>
+          <Route path="/GoodsPage" element={<GoodsPage/>}/>
+        </Routes>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }

@@ -1,22 +1,13 @@
 import './goodsList.scss';
 import goods3 from '../../resources/image/png/goods3.png';
 
-export default function GoodsList() {
+export default function GoodsList(props) {
+    const {controlIf} = props;
+
     return (
-        <section className="goods">
+        <section className="goodsList">
             <div className="limit">
-                <div className="control">
-                    <div className="search">
-                        <label>Lookiing for</label>
-                        <input type="text" placeholder="start typing here..."/>
-                    </div>
-                    <div className="filter">
-                        <label>Or filter</label>
-                        <button>Brazil</button>
-                        <button>Kenya</button>
-                        <button>Columbia</button>
-                    </div>
-                </div>
+                {controlIf ? <Control/> : null}
                 <div className="goodsCard">
                     <div className="card">
                         <img src={goods3} alt="goods"/>
@@ -57,5 +48,22 @@ export default function GoodsList() {
                 </div>
             </div>
         </section>
+    )
+}
+
+function Control() {
+    return (
+        <div className="control">
+            <div className="search">
+                <label>Lookiing for</label>
+                <input type="text" placeholder="start typing here..."/>
+            </div>
+            <div className="filter">
+                <label>Or filter</label>
+                <button>Brazil</button>
+                <button>Kenya</button>
+                <button>Columbia</button>
+            </div>
+        </div>
     )
 }

@@ -4,7 +4,7 @@ import nutsBlack from '../../resources/image/svg/nuts_black.svg'
 
 export default function Goods() {
     return (
-        <section>
+        <section className='goods'>
             <div className="limit">
                 <div className="image">
                     <img src={goods4} alt="goods4"/>
