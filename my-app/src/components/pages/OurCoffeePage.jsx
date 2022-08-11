@@ -7,7 +7,7 @@ export default function OurCoffeePage() {
         <>
             <MinorHeader backgroundImageMod={true}/>
             <AboutOurBeans fotoMod={true}/>
-            <GoodsList controlIf={true}/>
+            <GoodsList controlIf={true} urlData={"https://62f4ebd9ac59075124c71074.mockapi.io/goods"}/>
         </>
     )
 }

@@ -55,12 +55,12 @@
             row-gap: 60px;
             .card {
                 width: 220px;
-                height: 260px;
                 border-radius: 8px;
                 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
                 text-align: center;
-                padding: 37px 23px 0;
+                padding: 37px 23px 20px;
                 img {
+                    width: 100%;
                     margin-bottom: 14px;
                 }
                 .name {

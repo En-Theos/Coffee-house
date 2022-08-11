@@ -1,50 +1,50 @@
+import { useState, useEffect } from 'react';
+import Requests from '../../services';
+
+import Skeleton from "../skeleton"
+
 import './goodsList.scss';
-import goods3 from '../../resources/image/png/goods3.png';
 
 export default function GoodsList(props) {
-    const {controlIf} = props;
+    const [data, setData] = useState([]);
+    const [load, setLoad] = useState(true);
+
+    const {controlIf, urlData} = props;
+
+    useEffect(() => {
+        Requests.allData(urlData).then((d) => {
+            setData(d);
+            setLoad(false);
+        })
+    }, [])
+
+    const card = data.map((item, i) => {
+        const country = item.country.length > 19 ? item.country.substr(0, 19)+'...' : item.country,
+        name = item.name.length > 26 ? item.name.substr(0, 19)+'...' : item.name;
+
+        return (
+            <div className="card" key={item.id}>
+                <img src={item.img} alt="goods"/>
+                <p className="name">{name}</p>
+                <p className="country">{country}</p>
+                <p className="price">{item.price}$</p>
+            </div>
+        )
+    });
+
+    const loads = [];
+    for (let i = 0; i < 3; i++) {
+        loads.push(<Skeleton key={i}/>);
+    }
+
+    const elem = load ? loads : card;
 
     return (
         <section className="goodsList">
             <div className="limit">
                 {controlIf ? <Control/> : null}
                 <div className="goodsCard">
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Brazil</p>
-                        <p className="price">6.99$</p>
-                    </div>
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Kenya</p>
-                        <p className="price">6.99$</p>
-                    </div>
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Columbia</p>
-                        <p className="price">6.99$</p>
-                    </div>
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Brazil</p>
-                        <p className="price">6.99$</p>
-                    </div>
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Brazil</p>
-                        <p className="price">6.99$</p>
-                    </div>
-                    <div className="card">
-                        <img src={goods3} alt="goods"/>
-                        <p className="name">AROMISTICO Coffee 1 kg</p>
-                        <p className="country">Brazil</p>
-                        <p className="price">6.99$</p>
-                    </div>
+                    {elem}
                 </div>
             </div>
         </section>

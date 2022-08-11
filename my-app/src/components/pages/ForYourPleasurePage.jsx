@@ -7,7 +7,7 @@ export default function ForYourPleasurePage() {
         <>
             <MinorHeader backgroundImageMod={false}/>
             <AboutOurBeans fotoMod={false}/>
-            <GoodsList controlIf={false}/>
+            <GoodsList controlIf={false} urlData={"https://62f4ebd9ac59075124c71074.mockapi.io/goods2"}/>
         </>
     )
 }
