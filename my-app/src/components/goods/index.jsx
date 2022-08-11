@@ -1,22 +1,62 @@
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+import Requests from '../../services';
+import Skeleton from '../skeleton';
+
 import './goods.scss';
-import goods4 from '../../resources/image/png/goods4.jpg';
 import nutsBlack from '../../resources/image/svg/nuts_black.svg'
 
-export default function Goods() {
+
+export default function Goods(props) {
+    const {id} = useParams();
+    const [data, setData] = useState([]);
+    const [load, setLoad] = useState(true);
+
+    let url = '';
+    // eslint-disable-next-line default-case
+    switch (props.location) {
+        case 'ForYourPleasurePage':
+            url = 'goods2';
+            break;
+        case 'OurCoffeePage':
+            url = 'goods';
+            break;
+    }
+
+    useEffect(() => {
+        Requests.allData(`https://62f4ebd9ac59075124c71074.mockapi.io/${url}/${id}`).then((d) => {
+            setData(d);
+            setLoad(false);
+        });
+    }, []);
+
+    const elem = load ? <Skeleton style={{width: "100%"}}/> : <Elem data={data}/>
+
     return (
         <section className='goods'>
             <div className="limit">
-                <div className="image">
-                    <img src={goods4} alt="goods4"/>
-                </div>
-                <div className="content">
-                    <h3>About it</h3>
-                    <div className="decor"><img src={nutsBlack} alt="nuts"/></div>
-                    <p className="country"><span>Country:</span> Brasil</p>
-                    <p className="description"><span>Description:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <pre className="price">Price:   <span>16.99$</span></pre>
-                </div>
+                {elem}
             </div>
         </section>
+    )
+}
+
+function Elem({data}) {
+    const {img, country, description, price} = data;
+
+    return (
+        <>
+            <div className="image">
+                <img src={img} alt="goods4"/>
+            </div>
+            <div className="content">
+                <h3>About it</h3>
+                <div className="decor"><img src={nutsBlack} alt="nuts"/></div>
+                <p className="country"><span>Country:</span> {country}</p>
+                <p className="description"><span>Description:</span> {description}</p>
+                <pre className="price">Price:   <span>{price}$</span></pre>
+            </div>
+        </>
     )
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Requests from '../../services';
 
 import Skeleton from "../skeleton"
@@ -8,6 +9,8 @@ import './goodsList.scss';
 export default function GoodsList(props) {
     const [data, setData] = useState([]);
     const [load, setLoad] = useState(true);
+    const [sfilter, setSFilter] = useState('');
+    const [bfilter, setBFilter] = useState('');
 
     const {controlIf, urlData} = props;
 
@@ -18,19 +21,21 @@ export default function GoodsList(props) {
         })
     }, [])
 
-    const card = data.map((item, i) => {
-        const country = item.country.length > 19 ? item.country.substr(0, 19)+'...' : item.country,
-        name = item.name.length > 26 ? item.name.substr(0, 19)+'...' : item.name;
+    const card = data.filter(item => item.name.includes(sfilter) || !sfilter)
+                    .filter(item => item.country === bfilter || !bfilter)
+                    .map(item => {
+                        const country = item.country.length > 19 ? item.country.substr(0, 19)+'...' : item.country,
+                        name = item.name.length > 26 ? item.name.substr(0, 19)+'...' : item.name;
 
-        return (
-            <div className="card" key={item.id}>
-                <img src={item.img} alt="goods"/>
-                <p className="name">{name}</p>
-                <p className="country">{country}</p>
-                <p className="price">{item.price}$</p>
-            </div>
-        )
-    });
+                        return (
+                            <Link to={item.id} className="card" key={item.id}>
+                                <img src={item.img} alt="goods"/>
+                                <p className="name">{name}</p>
+                                <p className="country">{country}</p>
+                                <p className="price">{item.price}$</p>
+                            </Link>
+                        )
+                    });
 
     const loads = [];
     for (let i = 0; i < 3; i++) {
@@ -39,10 +44,14 @@ export default function GoodsList(props) {
 
     const elem = load ? loads : card;
 
+    function onSFilter(event) {setSFilter(event.target.value)}
+
+    function onBFilter(filterMod) {setBFilter(filterMod)}
+
     return (
         <section className="goodsList">
             <div className="limit">
-                {controlIf ? <Control/> : null}
+                {controlIf ? <Control value={sfilter} onSFilter={onSFilter} onBFilter={onBFilter}/> : null}
                 <div className="goodsCard">
                     {elem}
                 </div>
@@ -51,18 +60,21 @@ export default function GoodsList(props) {
     )
 }
 
-function Control() {
+function Control(props) {
+    const {sfilter, onSFilter, onBFilter} = props;
+
     return (
         <div className="control">
             <div className="search">
                 <label>Lookiing for</label>
-                <input type="text" placeholder="start typing here..."/>
+                <input type="text" placeholder="start typing here..." value={sfilter} onInput={onSFilter}/>
             </div>
             <div className="filter">
                 <label>Or filter</label>
-                <button>Brazil</button>
-                <button>Kenya</button>
-                <button>Columbia</button>
+                <button onClick={() => onBFilter('Namibia')}>Namibia</button>
+                <button onClick={() => onBFilter('Monaco')}>Monaco</button>
+                <button onClick={() => onBFilter('New Zealand')}>New Zealand</button>
+                <button onClick={() => onBFilter('')}>All</button>
             </div>
         </div>
     )
