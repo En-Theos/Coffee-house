@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Coffee-house/static/css/main.4f01036b.css",
+    "main.js": "/Coffee-house/static/js/main.08e94fea.js",
+    "static/media/fon_goods.png": "/Coffee-house/static/media/fon_goods.2789623e157473e4342a.png",
+    "static/media/fon_header.png": "/Coffee-house/static/media/fon_header.e970ec05f1c2c9cb2c2e.png",
+    "static/media/fon_header3.png": "/Coffee-house/static/media/fon_header3.53e8960521f177b3f221.png",
+    "static/media/fon_header2.png": "/Coffee-house/static/media/fon_header2.69b5f4460c8dede57436.png",
+    "static/media/foto.png": "/Coffee-house/static/media/foto.b918eb6a753e9daa247c.png",
+    "static/media/foto2.png": "/Coffee-house/static/media/foto2.2aae63680305b600856e.png",
+    "static/media/nuts_header.svg": "/Coffee-house/static/media/nuts_header.ff8be8f616203641612de00bf2dbf158.svg",
+    "static/media/nuts_header_black.svg": "/Coffee-house/static/media/nuts_header_black.ea6c9476c3c728c6378e332ee41e4701.svg",
+    "static/media/nuts.svg": "/Coffee-house/static/media/nuts.41072d12a9d02c8428e7327fb2c97a0d.svg",
+    "static/media/nuts_black.svg": "/Coffee-house/static/media/nuts_black.aa383f91ec1e10fc4dc16a381eef450b.svg",
+    "index.html": "/Coffee-house/index.html",
+    "main.4f01036b.css.map": "/Coffee-house/static/css/main.4f01036b.css.map",
+    "main.08e94fea.js.map": "/Coffee-house/static/js/main.08e94fea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f01036b.css",
+    "static/js/main.08e94fea.js"
+  ]
+}
