@@ -71,9 +71,9 @@ function Control(props) {
             </div>
             <div className="filter">
                 <label>Or filter</label>
-                <button onClick={() => onBFilter('Namibia')}>Namibia</button>
-                <button onClick={() => onBFilter('Monaco')}>Monaco</button>
-                <button onClick={() => onBFilter('New Zealand')}>New Zealand</button>
+                <button onClick={() => onBFilter('Georgia')}>Georgia</button>
+                <button onClick={() => onBFilter('Gibraltar')}>Gibraltar</button>
+                <button onClick={() => onBFilter('Macao')}>Macao</button>
                 <button onClick={() => onBFilter('')}>All</button>
             </div>
         </div>

@@ -13,7 +13,7 @@ export default function ForYourPleasurePage() {
                 <Route path="/" element={(
                     <>
                         <AboutOurBeans fotoMod={false}/>
-                        <GoodsList controlIf={false} urlData={"https://62f4ebd9ac59075124c71074.mockapi.io/goods2"}/>
+                        <GoodsList controlIf={false} urlData={"https://62f8d7563eab3503d1dc1d9a.mockapi.io/coffeehouse?page=1&limit=6"}/>
                     </>
                 )}/>
                 <Route path="/:id" element={<Goods location={"ForYourPleasurePage"}/>}/>

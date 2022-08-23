@@ -10,7 +10,7 @@ export default function OurBest() {
     const [load, setLoad] = useState(true);
 
     useEffect(() => {
-        Requests.allData("https://62f4ebd9ac59075124c71074.mockapi.io/ourBest").then((d) => {
+        Requests.allData("https://62f8d7563eab3503d1dc1d9a.mockapi.io/coffeehouse?page=1&limit=3").then((d) => {
             setData(d);
             setLoad(false);
         })
@@ -21,7 +21,7 @@ export default function OurBest() {
             <div className="card" key={i}>
                 <img src={item.img} alt={'goods' + i}/>
                 <p className="name">{item.name}</p>
-                <p className="price">{item.price}</p>
+                <p className="price">{item.price}$</p>
             </div>
         )
     });

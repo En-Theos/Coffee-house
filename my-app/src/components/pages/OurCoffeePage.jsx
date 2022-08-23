@@ -13,7 +13,7 @@ export default function OurCoffeePage() {
                 <Route path="/" element={(
                     <>
                         <AboutOurBeans fotoMod={true}/>
-                        <GoodsList controlIf={true} urlData={"https://62f4ebd9ac59075124c71074.mockapi.io/goods"}/>
+                        <GoodsList controlIf={true} urlData={"https://62f8d7563eab3503d1dc1d9a.mockapi.io/coffeehouse?page=2&limit=6"}/>
                     </>
                 )}/>
                 <Route path="/:id" element={<Goods location={"OurCoffeePage"}/>}/>

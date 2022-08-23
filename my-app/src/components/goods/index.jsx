@@ -8,25 +8,14 @@ import './goods.scss';
 import nutsBlack from '../../resources/image/svg/nuts_black.svg'
 
 
-export default function Goods(props) {
+export default function Goods() {
     const {id} = useParams();
     const [data, setData] = useState([]);
     const [load, setLoad] = useState(true);
 
-    let url = '';
-    // eslint-disable-next-line default-case
-    switch (props.location) {
-        case 'ForYourPleasurePage':
-            url = 'goods2';
-            break;
-        case 'OurCoffeePage':
-            url = 'goods';
-            break;
-    }
-
     useEffect(() => {
-        Requests.allData(`https://62f4ebd9ac59075124c71074.mockapi.io/${url}/${id}`).then((d) => {
-            setData(d);
+        Requests.allData(`https://62f8d7563eab3503d1dc1d9a.mockapi.io/coffeehouse?page=${id}&limit=1`).then((d) => {
+            setData(...d);
             setLoad(false);
         });
     }, []);
