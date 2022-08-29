@@ -2,8 +2,12 @@
 
 .ourBest {
     background-image: url('../../resources/image/png/fon_goods.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    background-position: center;
     background-size: cover;
+    @media (max-width: 750px) {
+        background-size:auto;
+    }
     .limit {
         max-width: 815px;
         margin: 0 auto;
@@ -17,7 +21,9 @@
         }   
         .cardsGoods {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0 -10px;
             .card {
                 display: flex;
                 flex-direction: column;
@@ -28,6 +34,7 @@
                 border-radius: 8px;
                 background: #FFFFFFA6;
                 padding: 22px 20px;
+                margin: 10px;
                 img {
                     width: 150px;
                 }   

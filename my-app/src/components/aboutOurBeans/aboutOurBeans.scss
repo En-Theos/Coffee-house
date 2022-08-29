@@ -10,11 +10,17 @@
         position: relative;
         .image {
             margin-right: 80px;
+            @media (max-width: 740px) {
+                display: none;
+            }
             img {
                 width: 272px;
             }
         }
         .content {
+            @media (max-width: 740px) {
+                margin: 0 auto;
+            }
             h3 {
                 font-size: 24px;
                 font-weight: 400;

@@ -3,6 +3,7 @@
 .minorHeader {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     .limit {
         max-width: 1160px;
         margin: 0 auto;
@@ -13,11 +14,16 @@
             margin-bottom: 60px;
             ul {
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 max-width: 355px;
+                flex-wrap: wrap;
                 li {
                     display: flex;
                     align-items: flex-end;
+                    margin-right: 10px;
+                    @media (max-width: 377px) {
+                        margin-bottom: 10px;
+                    }
                     .link {
                         color: white;
                     }

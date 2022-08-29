@@ -2,7 +2,7 @@
 
 footer {
     .limit {
-        max-width: 370px;
+        max-width: 385px;
         margin: 0 auto;
         padding: 30px 15px 20px;
         font-family: $Merienda;
@@ -10,11 +10,16 @@ footer {
             margin-bottom: 30px;
             ul {
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 max-width: 355px;
+                flex-wrap: wrap;
                 li {
                     display: flex;
                     align-items: flex-end;
+                    margin-right: 10px;
+                    @media (max-width: 377px) {
+                        margin-bottom: 10px;
+                    }
                     .link {
                         color: black;
                     }

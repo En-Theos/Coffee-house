@@ -4,22 +4,34 @@
     background-image: url('../../resources/image/png/fon_header.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     .limit {
         margin: 0 auto;
-        padding: 30px 15px 0;
+        padding: 30px 15px 0px;
         max-width: 1160px;
-        height: 640px;
+        min-height: 640px;
         color: white;
         font-family: $Merienda;
+        @media (max-width: 1024px) {
+            min-height: 540px;
+        }
         nav {
-            margin-bottom: 111px;
+            margin-bottom: 110px;
+            @media (max-width: 377px) {
+                margin-bottom: 60px;
+            }
             ul {
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 max-width: 355px;
+                flex-wrap: wrap;
                 li {
                     display: flex;
                     align-items: flex-end;
+                    margin-right: 10px;
+                    @media (max-width: 377px) {
+                        margin-bottom: 10px;
+                    }
                     .link {
                         color: white;
                     }
@@ -42,6 +54,11 @@
                 font-weight: 700;
                 font-size: 40px;
                 margin: 0 0 20px 0;
+                text-align: center;
+                line-height: 40px;
+                @media (max-width: 750px) {
+                    font-size: 30px;
+                }
             }
     
             .decor {
@@ -70,15 +87,23 @@
             }
     
             .slogan {
+                text-align: center;
                 font-weight: 700;
                 font-size: 24px;
                 margin: 0 0 20px 0;
+                @media (max-width: 750px) {
+                    font-size: 20px;
+                }
             }
     
             .question {
+                text-align: center;
                 font-weight: 700;
                 font-size: 24px;
                 margin: 0 0 18px 0;
+                @media (max-width: 750px) {
+                    font-size: 20px;
+                }
             }
             
             button {

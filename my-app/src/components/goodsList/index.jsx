@@ -71,10 +71,12 @@ function Control(props) {
             </div>
             <div className="filter">
                 <label>Or filter</label>
-                <button onClick={() => onBFilter('Georgia')}>Georgia</button>
-                <button onClick={() => onBFilter('Gibraltar')}>Gibraltar</button>
-                <button onClick={() => onBFilter('Macao')}>Macao</button>
-                <button onClick={() => onBFilter('')}>All</button>
+                <div>
+                    <button onClick={() => onBFilter('')}>All</button>
+                    <button onClick={() => onBFilter('Bahamas')}>Bahamas</button>
+                    <button onClick={() => onBFilter('Gabon')}>Gabon</button>
+                    <button onClick={() => onBFilter('Mali')}>Mali</button>
+                </div>
             </div>
         </div>
     )
