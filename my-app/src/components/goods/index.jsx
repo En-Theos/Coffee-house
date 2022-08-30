@@ -33,20 +33,21 @@ function Elem({ data }) {
     let refElemForResize = useRef(null);
 
     useEffect(() => {
+
         let observer = new ResizeObserver(mutationRecords => {
-            if (mutationRecords[0].target.clientWidth <= 835) {
+            if (mutationRecords[0].target.clientWidth <= 768) {
                 if (mod === 0) {
                     setMod(1);
                 }
-            } else if (mutationRecords[0].target.clientWidth >= 835) {
+            } else if (mutationRecords[0].target.clientWidth >= 768) {
                 if (mod === 1) {
                     setMod(0);
                 }
             }
         });
-        observer.observe(refElemForResize.current);
 
-    }, []);
+        observer.observe(refElemForResize.current);
+    }, [mod]);
 
     const elem =  mod ? <SliderElem data={data}/> : <BasicElem data={data}/>;
 
@@ -81,14 +82,16 @@ function SliderElem(prors) {
     let refSliderTape = useRef(null);
     let { current: refMousedownX } = useRef(0);
     let { current: carrentSlide } = useRef(0);
-    const maxBias = useMemo(() => 390, [])
 
     useEffect(() => {
+        const widthSlide = window.getComputedStyle(refSliderTape.current).width.replace(/\D/g, '');
+        const maxBias = widthSlide;
+        
         refSliderTape.current.addEventListener('touchstart', eventMousedown);
         refSliderTape.current.addEventListener('touchend', eventMouseup);
 
         function eventMousemove(event) {
-            refSliderTape.current.style.transform = `translateX(-${refMousedownX - event.changedTouches[0].clientX + 390 * carrentSlide}px)`;
+            refSliderTape.current.style.transform = `translateX(-${refMousedownX - event.changedTouches[0].clientX + widthSlide * carrentSlide}px)`;
         }
 
         function eventMousedown(event) {
@@ -104,17 +107,17 @@ function SliderElem(prors) {
                 const bias = refMousedownX - event.changedTouches[0].clientX
                 refSliderTape.current.removeEventListener('touchmove', eventMousemove);
 
-                if (bias < 0 && Math.abs(bias) > 390 / 4 && (bias + 390 * carrentSlide) > 0) {
+                if (bias < 0 && Math.abs(bias) > widthSlide / 4 && (bias + widthSlide * carrentSlide) > 0) {
                     refSliderTape.current.style.transition = '.4s';
                     carrentSlide--;
-                    refSliderTape.current.style.transform = `translateX(-${390 * carrentSlide}px)`;
-                } else if (bias > 0 && Math.abs(bias) > 390 / 4 && (bias + 390 * carrentSlide) < maxBias) {
+                    refSliderTape.current.style.transform = `translateX(-${widthSlide * carrentSlide}px)`;
+                } else if (bias > 0 && Math.abs(bias) > widthSlide / 4 && (bias + widthSlide * carrentSlide) < maxBias) {
                     refSliderTape.current.style.transition = '.4s';
                     carrentSlide++;
-                    refSliderTape.current.style.transform = `translateX(-${390 * carrentSlide}px)`;
+                    refSliderTape.current.style.transform = `translateX(-${widthSlide * carrentSlide}px)`;
                 } else {
                     refSliderTape.current.style.transition = '.4s';
-                    refSliderTape.current.style.transform = `translateX(-${390 * carrentSlide}px)`;
+                    refSliderTape.current.style.transform = `translateX(-${widthSlide * carrentSlide}px)`;
                 }
             }
         }
